@@ -24,6 +24,10 @@
       flex-direction: column;
     }
 
+    #jsBuffer {
+      /* display:none; */
+    }
+
     .button {
       display: inline-block;
       text-align: center;
@@ -68,13 +72,17 @@
         Click chosen newly added bookmark to open a new window that redirects to the named part of the application.
       </p>
 <p>
-    <a class="button" id="homeBtn" href="">Home</a>
+    <a class="button" id="homeBtn" href="coucou">Home</a>
   </p>
   </div>
   <div id="jsBuffer"></div>
   <script>
     $(function(){
-          $('#jsBuffer').load('https://cdn.jsdelivr.net/gh/KLVN/MediasiteDownloader@master/MSBookmarklet.min.js', function(){$('homeBtn').href=$('jsBuffer').innerHtml});
+          $('#jsBuffer').load('https://cdn.jsdelivr.net/gh/masebu/FusionApps-Bookmarklets/Home.js', function(){
+              alert('fetched ' + document.getElementById('jsBuffer').innerHTML);
+              document.getElementById('homeBtn').href=document.getElementById('jsBuffer').innerHTML;
+              alert('set ' + document.getElementById('homeBtn').href);
+            });
     });
 </script>
 </body>
