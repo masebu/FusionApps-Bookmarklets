@@ -25,7 +25,7 @@
     }
 
     #jsBuffer {
-      /* display:none; */
+      display:none;
     }
 
     .button {
@@ -79,9 +79,7 @@
   <script>
     $(function(){
           $('#jsBuffer').load('https://cdn.jsdelivr.net/gh/masebu/FusionApps-Bookmarklets/Home.js', function(){
-              alert('fetched ' + document.getElementById('jsBuffer').innerHTML);
               document.getElementById('homeBtn').href=document.getElementById('jsBuffer').innerHTML;
-              alert('set ' + document.getElementById('homeBtn').href);
             });
     });
 </script>
