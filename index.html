@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>FusionApps-Bookmarklets</title>
+  <style>
+    body {
+      font-family: "Arial";
+    }
+
+    /*
+    #00688c base blue
+    #00758f blue
+    #bde6ee light blue
+    #cad9de light slate
+    #3a913f green
+    #942645 burgundy
+    */
+
+    #wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .button {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      padding: 0.5em;
+      margin: 0;
+      font-size: 1em;
+      /*line-height: 5em;*/
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      color: #942645;
+      box-shadow: 0 0 0 1px #00758f;
+      border: 0;
+      background: #bde6ee;
+      cursor: alias;
+      position: relative;
+    }
+
+    p {
+      width: 600px;
+      padding-bottom: 0.1em;
+      font-size: 1em;
+      color: black;
+    }
+
+    #instructionsHeader {
+      font-weight:bold;
+    }
+
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="wrapper">
+    <p id="instructionsHeader">Instructions</p>
+      <p id="instructions">Drag each of the buttons below onto you browser's bookmarks bar.<br/>
+        Open a session on a HCM Cloud environment<br/>
+        Click chosen newly added bookmark to open a new window that redirects to the named part of the application.
+      </p>
+<p>
+    <a class="button" id="homeBtn" href="">Home</a>
+  </p>
+  </div>
+  <div id="jsBuffer"></div>
+  <script>
+    $(function(){
+          $('#jsBuffer').load('https://cdn.jsdelivr.net/gh/KLVN/MediasiteDownloader@master/MSBookmarklet.min.js', function(){$('homeBtn').href=$('jsBuffer').innerHtml});
+    });
+</script>
+</body>
+</html>
